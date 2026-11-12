@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @media print {
+    body {
+      background-color: white !important;
+      color: black !important;
+      font-size: 11pt !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .no-print {
+      display: none !important;
+    }
+    .print-only {
+      display: block !important;
+    }
+    .print-break-inside-avoid {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .print-break-after-page {
+      break-after: page;
+      page-break-after: always;
+    }
+
+    /* Support for printing single items (satu per satu) exclusively */
+    body.printing-single #app-root-layout {
+      display: none !important;
+    }
+    body.printing-single .single-print-modal-container {
+      position: static !important;
+      background: white !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      overflow: visible !important;
+      box-shadow: none !important;
+      border: none !important;
+      z-index: auto !important;
+      backdrop-filter: none !important;
+    }
+    body.printing-single .single-print-paper {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    /* Modal print support for any modal that has print content */
+    .print-modal-container {
+      position: static !important;
+      background: white !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      overflow: visible !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    .print-modal-paper {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+  }
+}
+
+@page {
+  margin: 10mm 12mm;
+  size: auto;
+}
+
+/* App scale overrides for print and display sizes */
+@media print {
+  #app-root-layout {
+    zoom: 1 !important;
+  }
+}
+
+.app-size-kecil {
+  font-size: 0.94rem;
+}
+
+.app-size-besar {
+  font-size: 1.06rem;
+}
+
+/* Paper dimensions for preview and printing */
+.paper-a4 {
+  width: 210mm;
+  min-height: 297mm;
+}
+.paper-f4 {
+  width: 215mm;
+  min-height: 330mm;
+}
+.paper-legal {
+  width: 216mm;
+  min-height: 356mm;
+}
+.paper-letter {
+  width: 216mm;
+  min-height: 279mm;
+}

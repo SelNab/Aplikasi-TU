@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "SchoolSettings": {
+      "title": "SchoolSettings",
+      "description": "Pengaturan dan identitas resmi sekolah SD di Yahukimo",
+      "type": "object",
+      "properties": {
+        "namaSekolah": { "type": "string" },
+        "npsn": { "type": "string" },
+        "namaKepsek": { "type": "string" },
+        "nipKepsek": { "type": "string" },
+        "operatorTU": { "type": "string" },
+        "nipOperator": { "type": "string" }
+      }
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Data peserta didik sekolah",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "namaSiswa": { "type": "string" },
+        "nisn": { "type": "string" },
+        "kelas": { "type": "string" },
+        "kategori": { "type": "string" }
+      }
+    },
+    "Teacher": {
+      "title": "Teacher",
+      "description": "Data guru dan pegawai TU sekolah",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nama": { "type": "string" },
+        "nip": { "type": "string" },
+        "jabatan": { "type": "string" }
+      }
+    },
+    "JadwalPiket": {
+      "title": "JadwalPiket",
+      "description": "Jadwal piket guru dan regu kebersihan siswa",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hari": { "type": "string" },
+        "koordinatorGuru": { "type": "string" },
+        "areaPiket": { "type": "string" }
+      }
+    },
+    "JadwalPelajaran": {
+      "title": "JadwalPelajaran",
+      "description": "Jadwal mata pelajaran kelas",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "hari": { "type": "string" },
+        "kelas": { "type": "string" },
+        "mataPelajaran": { "type": "string" },
+        "guruPengampu": { "type": "string" }
+      }
+    },
+    "SchoolSyncSnapshot": {
+      "title": "SchoolSyncSnapshot",
+      "description": "Snapshot data lengkap administrasi sekolah untuk sinkronisasi cloud",
+      "type": "object",
+      "properties": {
+        "updatedAt": { "type": "string" },
+        "schoolNpsn": { "type": "string" },
+        "operator": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/schools/{schoolId}": {
+      "schema": "SchoolSyncSnapshot",
+      "description": "Dokumen sinkronisasi sekolah di Firebase"
+    },
+    "/schools/{schoolId}/students/{studentId}": {
+      "schema": "Student",
+      "description": "Koleksi data siswa"
+    },
+    "/schools/{schoolId}/teachers/{teacherId}": {
+      "schema": "Teacher",
+      "description": "Koleksi data guru dan pegawai"
+    },
+    "/schools/{schoolId}/jadwal_piket/{piketId}": {
+      "schema": "JadwalPiket",
+      "description": "Koleksi jadwal piket sekolah"
+    },
+    "/schools/{schoolId}/jadwal_pelajaran/{jadwalId}": {
+      "schema": "JadwalPelajaran",
+      "description": "Koleksi jadwal pelajaran sekolah"
+    }
+  }
+}

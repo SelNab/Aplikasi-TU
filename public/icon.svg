@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded App Icon Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-dasharray="16 8" opacity="0.85"/>
+  <circle cx="256" cy="256" r="195" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.3"/>
+
+  <!-- Toga / Graduation Cap -->
+  <g filter="url(#shadow)">
+    <polygon points="256,120 370,175 256,230 142,175" fill="url(#goldGrad)"/>
+    <polygon points="175,200 175,260 256,300 337,260 337,200 256,242" fill="#d97706"/>
+    <!-- Tassel -->
+    <path d="M 370,175 Q 385,210 380,260" stroke="#fef3c7" stroke-width="5" fill="none"/>
+    <circle cx="380" cy="268" r="8" fill="#fef3c7"/>
+  </g>
+
+  <!-- Open Book -->
+  <g filter="url(#shadow)">
+    <!-- Book Cover Spine -->
+    <path d="M 256,275 L 256,410" stroke="#b45309" stroke-width="8" stroke-linecap="round"/>
+    <!-- Left Page -->
+    <path d="M 256,285 C 220,270 160,275 110,295 L 110,415 C 160,395 220,390 256,405 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+    <!-- Right Page -->
+    <path d="M 256,285 C 292,270 352,275 402,295 L 402,415 C 352,395 292,390 256,405 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+
+    <!-- Left Page Text Lines -->
+    <line x1="140" y1="320" x2="230" y2="310" stroke="#10b981" stroke-width="5" stroke-linecap="round"/>
+    <line x1="140" y1="345" x2="225" y2="335" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+    <line x1="140" y1="370" x2="210" y2="360" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Right Page Text Lines -->
+    <line x1="282" y1="310" x2="372" y2="320" stroke="#10b981" stroke-width="5" stroke-linecap="round"/>
+    <line x1="287" y1="335" x2="372" y2="345" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+    <line x1="292" y1="360" x2="362" y2="370" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Papua Pedalaman & School Star -->
+  <circle cx="256" cy="445" r="8" fill="#fbbf24"/>
+  <circle cx="230" cy="445" r="5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="282" cy="445" r="5" fill="#ffffff" opacity="0.8"/>
+</svg>

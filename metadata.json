@@ -1,0 +1,8 @@
+{
+  "name": "Remix Aplikasi Administrasi Tata Usaha Sekolah_versi_1.1",
+  "description": "Sistem Informasi Administrasi Tata Usaha Sekolah Terpadu dan Standar Dapodik dengan Mode Offline \u0026 Online untuk Papua Pedalaman Pengembang oleh: Selpius Nabyal, S.Pd.Gr.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
